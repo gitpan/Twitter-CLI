@@ -1,11 +1,12 @@
 package Twitter::CLI;
+use version;  $VERSION = qv('0.01_01');
 use Moose;
 with qw/
     MooseX::Object::Pluggable
     MooseX::Getopt       
 /;
 use Carp qw/croak/;
-has +_USER_NAMES =>
+has _USER_NAMES =>
 (   is => 'ro',
     required => 1,
     isa => 'ArrayRef',
@@ -46,13 +47,13 @@ It supports multiple command-line interfaces to Net::Twitter with plugins.
 You plug a plugin into an interface. For example, this is an example of what the
 twitter_cli script looks like:
     
-    use Twitter::CLI::Interface::Default;
+    use Twitter::CLI::Interface::Bash;
     
-    my $CLI = Twitter::CLI::Interface::Default->new;
+    my $CLI = Twitter::CLI::Interface::Bash->new;
     
     foreach my $user (@{ $CLI->_USER_NAMES }){
         #Create a new user session for each user
-        my $user_session = Twitter::CLI::Interface::Default::UserSession->new_with_options;
+        my $user_session = Twitter::CLI::Interface::Bash::UserSession->new_with_options;
         
         #Set username 
         $user_session->_username( $user );#XXX: Need to get+verify the username from the config file
@@ -150,4 +151,6 @@ under the same terms as Perl itself.
 
 =cut
 
-1; # End of 
+1; # End of
+__DATA__
+See perldoc Twitter::CLI for more information.

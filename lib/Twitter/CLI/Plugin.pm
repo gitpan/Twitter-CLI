@@ -1,4 +1,5 @@
 package Twitter::CLI::Plugin;
+use version;  $VERSION = qv('0.01_01');
 use Moose;
 =pod
 
@@ -20,8 +21,8 @@ Twitter::CLI::Plugin -- how Twitter::CLI plugins work
     
     -----In the twitter_cli file------
     #Use the default interface and plugin provided with Net::Twitter::CLI:
-    use Twitter::CLI::Interface::Default;
-    my $twitter_cli = Twitter::CLI::Interface::Default->new;
+    use Twitter::CLI::Interface::Bash;
+    my $twitter_cli = Twitter::CLI::Interface::Bash->new;
 
     #Load plugins:
     $twitter_cli->load_plugin('Prompting');

@@ -1,5 +1,6 @@
 #!/usr/bin/perl -w
 package Twitter::CLI::Plugin::Prompting;
+use version;  $VERSION = qv('0.01_01');
 use Moose::Role;
 use File::Temp qw/ tempfile /;
 
@@ -14,7 +15,7 @@ sub filehandle_iterator {
 #Main sub that we plug in:
 sub run {
     my $self = shift;
-    print "I'm a prompting plugin app!";
+    print "I'm a prompting plugin!";
     $self->init_menu();
     $self->print_menu();
     

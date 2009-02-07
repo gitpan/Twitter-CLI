@@ -10,6 +10,7 @@ BEGIN {
 diag( "Testing environment" );
 test_backticks();
 
+#XXX: This should be taken out or be integrated into the Bash plugin:
 sub test_backticks {
     
     my ($errortempfh, $error_temp_file_path) = tempfile();

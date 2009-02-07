@@ -4,7 +4,7 @@ Makefile.PL
 README
 Design_Notes
 lib/Twitter/CLI.pm
-lib/Twitter/CLI/Interface/Default.pm
+lib/Twitter/CLI/Interface/Bash.pm
 lib/Twitter/CLI/Interface/Prompting.pm
 lib/Twitter/CLI/Plugin.pm
 t/00-load.t

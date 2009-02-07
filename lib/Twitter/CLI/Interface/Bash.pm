@@ -1,4 +1,5 @@
-package Twitter::CLI::Interface::Default;
+package Twitter::CLI::Interface::Bash;
+use version;  $VERSION = qv('0.01_01');
 =head1 NAME
 
  - The great new !
@@ -108,9 +109,9 @@ sub run {
 }
 
 ######################################
-package Twitter::CLI::Interface::Default::UserSession;
+package Twitter::CLI::Interface::Bash::UserSession;
 use Moose;
-extends 'Twitter::CLI::Interface::Default';
+extends 'Twitter::CLI::Interface::Bash';
 
 has _tweet => (is => 'rw', isa => 'Str', default => '');#Init as empty string
 has _username => (is => 'rw', isa => 'Str');

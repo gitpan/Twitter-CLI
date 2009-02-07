@@ -2,7 +2,7 @@
 
 =head1 NAME
 
-twitter.pl - Command-line interface to 
+twitter.pl - Command-line interface to Twitter::CLI
 
 =cut
 
@@ -10,13 +10,13 @@ use strict; use warnings;
 use lib "../lib";
 
 #Load the interface:
-use Twitter::CLI::Interface::Default;
+use Twitter::CLI::Interface::Bash;
 
-my $CLI = Twitter::CLI::Interface::Default->new;
+my $CLI = Twitter::CLI::Interface::Bash->new;
 
 foreach my $user (@{ $CLI->_USER_NAMES }){
     #Create a new user session for each user
-    my $user_session = Twitter::CLI::Interface::Default::UserSession->new_with_options;
+    my $user_session = Twitter::CLI::Interface::Bash::UserSession->new_with_options;
     
     #Set username 
     $user_session->_username( $user );#XXX: Need to get+verify the username from the config file
